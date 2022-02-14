@@ -9,11 +9,11 @@
   <% end %>
 </div>
 
-<%#<div> 管理者機能を実装したらコメントアウトを外す
-  <%# if user_signed_in? && current_user.admin? %>
-    <%#= link_to '管理者用:投稿ページ', new_admin_post_path %>
-  <%# end %>
-<%#</div>%>
+<div> 
+  <% if user_signed_in? && current_user.admin? %>
+  <%= link_to 'コラム投稿ページ', new_admin_column_path %>
+  <% end %>
+</div>
 
 <div class="colmuns">
   <ul>＜コラム一覧＞
