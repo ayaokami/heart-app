@@ -1,0 +1,29 @@
+<h1>Heart App 〜心不全の自己管理アプリ〜<h1>
+<div>
+  <% if user_signed_in? %>
+    <%= "#{current_user.nickname}さんはログイン中です"%>
+    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to 'ユーザー新規登録', new_user_registration_path %>
+    <%= link_to 'ログイン', new_user_session_path %>
+  <% end %>
+</div>
+
+<%#<div> 管理者機能を実装したらコメントアウトを外す
+  <%# if user_signed_in? && current_user.admin? %>
+    <%#= link_to '管理者用:投稿ページ', new_admin_post_path %>
+  <%# end %>
+<%#</div>%>
+
+<div class="colmuns">
+  <ul>＜コラム一覧＞
+    <% @columns.each do |f| %>
+      <li>
+        <td><%= f.title %></td>
+        <td><%= f.text %></td>
+        <td><%= f.genre.name %></td>
+        <td><%= f.created_at %></td>
+      </li>
+    <% end %>
+  </ul>
+<div>
