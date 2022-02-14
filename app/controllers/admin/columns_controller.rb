@@ -1,5 +1,7 @@
 class Admin::ColumnsController < ApplicationController
-  # 管理者以外はトップページに遷移する
+  # ログインしていないuserがURL入力で操作しようとした場合、ログイン画面に遷移する
+  before_action :authenticate_user!, only: [:new, :create, :destroy, :edit, :update]
+  # ログインしていても、管理者以外はトップページに遷移する
   before_action :if_not_admin
 
   # 以下に管理者が行うアクションを記載
