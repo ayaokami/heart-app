@@ -23,6 +23,11 @@
         <td><%= f.text %></td>
         <td><%= f.genre.name %></td>
         <td><%= f.created_at %></td>
+        <%# adminの時だけ編集・削除機能を表示する %>
+        <% if user_signed_in? && current_user.admin? %>
+          <%= link_to '編集', edit_admin_column_path(f.id), method: :get %>
+          <%= link_to '削除', admin_column_path(f.id), method: :delete %>
+        <% end %>
       </li>
     <% end %>
   </ul>
