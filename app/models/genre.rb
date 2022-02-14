@@ -13,4 +13,7 @@ class Genre < ActiveHash::Base
     { id: 11, name: '風邪、感染症との関連' }
     { id: 12, name: 'その他' }
   ]
+
+  include ActiveHash::Associations
+  has_many :columns
   end
