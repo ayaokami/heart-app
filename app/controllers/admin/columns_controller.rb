@@ -21,4 +21,8 @@ class Admin::ColumnsController < ApplicationController
   def if_not_admin
     redirect_to root_path unless current_user.admin?
   end
+
+  def column_params
+    params.require(:column).permit(:title, :text, genre_id).merge(user_id: current_user.id)
+  end
 end

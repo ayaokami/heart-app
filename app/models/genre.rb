@@ -9,8 +9,8 @@ class Genre < ActiveHash::Base
     { id: 7, name: '入浴' },
     { id: 8, name: '性' },
     { id: 9, name: '運動' },
-    { id: 10, name: '内服' }
-    { id: 11, name: '風邪、感染症との関連' }
+    { id: 10, name: '内服' },
+    { id: 11, name: '風邪や感染症との関連' },
     { id: 12, name: 'その他' }
   ]
 
