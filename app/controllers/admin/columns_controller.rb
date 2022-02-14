@@ -7,7 +7,7 @@ class Admin::ColumnsController < ApplicationController
     @column = Column.new
   end
 
-  def creste
+  def create
     @column = Column.new(column_params)
     if @column.valid?
       @column.save
@@ -23,6 +23,6 @@ class Admin::ColumnsController < ApplicationController
   end
 
   def column_params
-    params.require(:column).permit(:title, :text, genre_id).merge(user_id: current_user.id)
+    params.require(:column).permit(:title, :text, :genre_id).merge(user_id: current_user.id)
   end
 end
