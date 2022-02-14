@@ -17,6 +17,25 @@ class Admin::ColumnsController < ApplicationController
     end
   end
 
+  def edit
+    @column = Column.find(params[:id])
+  end
+
+  def update
+    @column = Column.find(params[:id])
+    if @column.update(column_params)
+      redirect_to root_path
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    column = Column.find(params[:id])
+    column.destroy
+    redirect_to root_path
+  end
+
   private
   def if_not_admin
     redirect_to root_path unless current_user.admin?
