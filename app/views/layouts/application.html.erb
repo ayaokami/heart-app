@@ -5,6 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%# 下記の記述は、app/assets/stylesheets/application.cssというcssファイルを読み込んでいることを示す%>
+    <%# application.cssは、*= require_tree .という記述があり、同じディレクトリにあるcssファイルを読み込むことを示す%>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>

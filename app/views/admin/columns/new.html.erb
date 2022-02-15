@@ -1,7 +1,9 @@
-<h1>コラム投稿ページ<h1>
 <%= form_with url: admin_columns_path, model: @column, local: true do |f| %>
-  <%= f.text_field :title, class: "title", placeholder: "タイトル"  %>
-  <%= f.text_area :text, class: "text", placeholder: "テキスト", rows: "5", cols: "30" %>
-  <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
-  <%= f.submit "投稿する", class:"btn" %>
+  <div class="column-box">
+    コラム投稿ページ
+    <%= f.text_field :title, class: "title", placeholder: "タイトル"  %>
+    <%= f.text_area :text, class: "text", placeholder: "テキスト", rows: "5", cols: "30" %>
+    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
+    <%= f.submit "投稿する", class:"btn" %>
+  </div>
 <% end %>
