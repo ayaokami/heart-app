@@ -1,23 +1,6 @@
-h1{
-  text-align: center;
-  background-color:peachpuff;
-}
-
 h2{
   text-align: center;
-}
-
-.post{
-  display: block;
-  width: 300px;
-  padding: 10px;
-  border: 1px solid white;
-  background-color: orange;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-  margin: 0 auto;
-  margin-bottom: 30px;
+  background-color: lightyellow;
 }
 
 .columns{

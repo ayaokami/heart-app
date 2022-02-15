@@ -1,21 +1,6 @@
-<h1>Heart App<h1>
-<div>
-  <% if user_signed_in? %>
-    <%= "#{current_user.nickname}さん"%>
-    <%= link_to 'ログアウト', destroy_user_session_path, class:"post", method: :delete %>
-  <% else %>
-    <%= link_to 'ユーザー新規登録', new_user_registration_path, class:"post" %>
-    <%= link_to 'ログイン', new_user_session_path, class:"post" %>
-  <% end %>
-</div>
+<%= render "shared/header" %>
 
-<div> 
-  <% if user_signed_in? && current_user.admin? %>
-  <%= link_to 'コラム投稿ページ', new_admin_column_path, class:"post" %>
-  <% end %>
-</div>
-
-  <h2>＜コラム一覧＞<h2>
+<h2>＜コラム一覧＞<h2>
     <% @columns.each do |f| %>
     <div class="columns">
       <div class="column-title">
