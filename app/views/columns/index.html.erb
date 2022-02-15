@@ -1,21 +1,6 @@
-<h1>Heart App<h1>
-<div>
-  <% if user_signed_in? %>
-    <%= "#{current_user.nickname}さん"%>
-    <%= link_to 'ログアウト', destroy_user_session_path, class:"post", method: :delete %>
-  <% else %>
-    <%= link_to 'ユーザー新規登録', new_user_registration_path, class:"post" %>
-    <%= link_to 'ログイン', new_user_session_path, class:"post" %>
-  <% end %>
-</div>
+<%= render "shared/header" %>
 
-<div> 
-  <% if user_signed_in? && current_user.admin? %>
-  <%= link_to 'コラム投稿ページ', new_admin_column_path, class:"post" %>
-  <% end %>
-</div>
-
-  <h2>＜コラム一覧＞<h2>
+<h2>＜コラム一覧＞<h2>
     <% @columns.each do |f| %>
     <div class="columns">
       <div class="column-title">
@@ -30,11 +15,13 @@
       <div class="column-date">
         <%= f.created_at %>
       </div>
+      <ul class = column-admin>
         <%# adminの時だけ編集・削除機能を表示する %>
         <% if user_signed_in? && current_user.admin? %>
-          <%= link_to '編集', edit_admin_column_path(f.id), method: :get %>
-          <%= link_to '削除', admin_column_path(f.id), method: :delete %>
+          <li><%= link_to '編集', edit_admin_column_path(f.id), method: :get, class: "column-edit" %></li>
+          <li><%= link_to '削除', admin_column_path(f.id), method: :delete, class: "column-delete" %></li>
         <% end %>
+      </ul>
     </div>
     <% end %>
 
@@ -42,3 +29,5 @@
   <span class='record-btn-text'>記録する</span>
   <%= image_tag 'My project.png' , size: '185x50' ,class: "record-btn-icon" %>
 <% end %>
+
+<%= render "shared/footer" %>

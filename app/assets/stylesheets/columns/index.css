@@ -1,23 +1,6 @@
-h1{
-  text-align: center;
-  background-color:peachpuff;
-}
-
 h2{
   text-align: center;
-}
-
-.post{
-  display: block;
-  width: 300px;
-  padding: 10px;
-  border: 1px solid white;
-  background-color: orange;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-  margin: 0 auto;
-  margin-bottom: 30px;
+  background-color: lightyellow;
 }
 
 .columns{
@@ -48,4 +31,21 @@ h2{
 
 .column-date{
   font-size: 12px;
+}
+
+.column-admin{
+  display: flex;
+  list-style: none;
+  font-size: 18px;
+}
+
+.column-edit{
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+}
+
+.column-delete{
+  text-decoration: none;
+  color: #333333;
 }
