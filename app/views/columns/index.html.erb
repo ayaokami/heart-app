@@ -15,11 +15,13 @@
       <div class="column-date">
         <%= f.created_at %>
       </div>
+      <ul class = column-admin>
         <%# adminの時だけ編集・削除機能を表示する %>
         <% if user_signed_in? && current_user.admin? %>
-          <%= link_to '編集', edit_admin_column_path(f.id), method: :get %>
-          <%= link_to '削除', admin_column_path(f.id), method: :delete %>
+          <li><%= link_to '編集', edit_admin_column_path(f.id), method: :get, class: "column-edit" %></li>
+          <li><%= link_to '削除', admin_column_path(f.id), method: :delete, class: "column-delete" %></li>
         <% end %>
+      </ul>
     </div>
     <% end %>
 

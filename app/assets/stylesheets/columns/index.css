@@ -32,3 +32,20 @@ h2{
 .column-date{
   font-size: 12px;
 }
+
+.column-admin{
+  display: flex;
+  list-style: none;
+  font-size: 18px;
+}
+
+.column-edit{
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+}
+
+.column-delete{
+  text-decoration: none;
+  color: #333333;
+}
