@@ -7,7 +7,6 @@
 
 .heartapp-icon-6 {
   width: 20vw;
-  margin-right: 10vw;
 }
 
 .nav {
@@ -71,6 +70,24 @@
 
 .sign-up {
   text-decoration: none;
+  line-height: 32px;  /* この記述抜けでログイン表示と少しずれがあった */
   color: #333333;
   font-weight: bold;
+}
+
+ /* スマホ表示時 */
+ @media (max-width: 599px) {
+  .heartapp-icon-6 {
+    width: 25vw;
+  }
+
+  .nav {
+    font-size: 15px; /* 可能な一番大きいサイズ*/
+    width: 100%;
+    padding: 1vh 0;
+  }
+
+  .category-list {
+    margin-right: 4vw; /* カテゴリーのーと・カレンダーの点が重なるためサイズアップ*/
+  }
 }

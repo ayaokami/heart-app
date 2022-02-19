@@ -3,22 +3,40 @@
   width: 120px;
   background: lightyellow;
   text-align: center;
-  border-radius: 4%;
+  border-radius: 4%;  /* 要素の境界の角を丸める指定 */
   bottom: 32px;
   right: 32px;
-  position: fixed;
+  position: fixed;    /* 特定の位置に固定して表示させる 右から32px、下から32pxの位置 */
   padding: 15px;
 }
 
 .record-btn-text {
   color: darkgreen;
-  display: block;
+  display: block;     /* ブロック要素にする */
   font-size: 18px;
   text-decoration: none;
   margin-bottom: 5px;
 }
 
-.record-btn-icon {
+.record-btn-icon { /* これは画像のサイズ比率なので、タブレット・スマホ用に小さくしても意味なかった*/
   height: 100%;
   width: 80%;
+}
+
+/* コラムにかかるとコラムが読めなくなる。ボタンの表示位置を変えてもいいが、ひとまず小さくして表示してみる（タブレットはこのままのサイズで問題なし）*/
+
+ /* スマホ表示時 */
+ @media (max-width: 599px) {
+  .record-btn {
+    width: 60px;
+    bottom: 10px;
+    right: 10px;
+    position: fixed;    /* 特定の位置に固定して表示させる 右から10px、下から10pxの位置 */
+    padding: 5px;
+  }
+  
+  .record-btn-text {
+    font-size: 10px;
+    margin-bottom: 5px;
+  }
 }
