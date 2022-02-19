@@ -26,12 +26,12 @@ RSpec.describe Column, type: :model do
       it 'genre_idが空では保存できない' do
         @column.genre_id = nil
         @column.valid?
-        expect(@column.errors.full_messages).to include("Genre  を選択してください ")
+        expect(@column.errors.full_messages).to include('Genre  を選択してください ')
       end
       it 'genre_idが1では保存できない' do
         @column.genre_id = 1
         @column.valid?
-        expect(@column.errors.full_messages).to include("Genre  を選択してください ")
+        expect(@column.errors.full_messages).to include('Genre  を選択してください ')
       end
       it '管理者が紐付いていないと保存できない' do
         @column.user_id = 0

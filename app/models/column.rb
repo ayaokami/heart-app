@@ -3,9 +3,9 @@ class Column < ApplicationRecord
   belongs_to :genre
   belongs_to :user
 
-  #空の投稿を保存できないようにする
+  # 空の投稿を保存できないようにする
   validates :title, :text, presence: true
 
-  #ジャンルの選択が「--」の時は保存できないようにする
-  validates :genre_id, numericality: { other_than: 1, message: " を選択してください " } 
+  # ジャンルの選択が「--」の時は保存できないようにする
+  validates :genre_id, numericality: { other_than: 1, message: ' を選択してください ' }
 end
