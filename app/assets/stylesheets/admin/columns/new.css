@@ -1,10 +1,12 @@
+/* コラム投稿・編集のフォーム部分 */
+
 .column-box {
-  height:800px;
+  height: 100vh;  /* 高さをpxで指定していたが、サイズによって変な余白が入る。100%ではフォームの高さだけ表示されてしまう。高さに応じて画面いっぱいにしたいのでvh使用 */
   background-color: peachpuff;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  justify-content: center; /* 左右でみたとき中央配置*/
+  align-items: center;     /* 上下でみたとき中央配置 */
+  flex-direction: column;  /* 積み重なるように配置する、の意味 */
 }
 
 .title {
@@ -16,7 +18,7 @@
 .text {
   height: 100px;
   width: 300px;
-  resize:none;
+  resize:none;   /* リサイズを行わない、の意味*/
   margin-bottom: 20px;
 }
 
@@ -33,3 +35,5 @@
   background-color: orange;
   color: white;
 }
+/* タブレット表示時：このフォームはサイズ変更しなくてよい*/
+/* スマホ表示時：最小スマホの横幅画面サイズは320px。検証確認でnew.cssはこのままのサイズでスマホ表示（320〜599px）がちょうどよかったので追記せず */

@@ -1,20 +1,9 @@
-* {
-  box-sizing: border-box;
-}
-
 .footer {
-  width: 100%;
-  min-width: 800px;
-  height: 200px;
+  width: 100vw;
+  height: 5vh;
   background-color: white;
   display: flex;
-  flex-direction: column;
-  padding: 0,0,0,50px;
   border: 1px solid #fff;
-}
-
-.logo-5 {
-  width: 20vh;
-  vertical-align: bottom;
-  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
 }

@@ -4,8 +4,8 @@ h2{
 }
 
 .columns{
-  height:200px;
-  background-color:peachpuff;
+  height: auto;  /* pxでサイズ指定するとコラム量（子要素）が増えると親要素をはみ出した。hight:100%;指定し、サイズに合わせてサイズ変更可*/
+  background-color:peachpuff;    /* hight:100%;（子要素にかける）でも伸び縮みしたが、.columnsは親要素なので、height: auto;と記述*/
   display: flex;
   align-items: center;
   flex-direction: column;

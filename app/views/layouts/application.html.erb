@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%# レスポンシブ対応のために表示領域（viewport）を指定する contentで機器のサイズに合わせる記述、拡大率1.0を指定 %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HeartApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%# 下記の記述は、app/assets/stylesheets/application.cssというcssファイルを読み込んでいることを示す%>
-    <%# application.cssは、*= require_tree .という記述があり、同じディレクトリにあるcssファイルを読み込むことを示す%>
+    <%# 下記の記述は、app/assets/stylesheets/application.cssというcssファイルを読み込んでいることを示す %>
+    <%# application.cssは、*= require_tree .という記述があり、同じディレクトリにあるcssファイルを読み込むことを示す %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>

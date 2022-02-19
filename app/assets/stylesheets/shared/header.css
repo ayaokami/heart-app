@@ -1,17 +1,12 @@
-* {
-  box-sizing: border-box;
-}
-
 .top-page-header {
   width: 100vw;
-  padding: 2vh 15vw;
+  padding: 0 15vw;
   display: flex;
   flex-direction: column;
 }
 
-.heartapp-icon {
-  width: 10vw;
-  margin-right: 10vw;
+.heartapp-icon-6 {
+  width: 20vw;
 }
 
 .nav {
@@ -26,7 +21,6 @@
 .lists-left {
   display: flex;
   min-width: 200px;
-
 }
 
 .category-list {
@@ -57,6 +51,7 @@
   text-decoration: none;
   margin-right: 2vw;
   color: #333333;
+  font-weight: bold;
 }
 
 .post {
@@ -65,15 +60,34 @@
   font-weight: bold;
 }
 
-
 .login {
   text-decoration: none;
   line-height: 32px;
   margin-right: 3vw;
   color: #333333;
+  font-weight: bold;
 }
 
 .sign-up {
   text-decoration: none;
+  line-height: 32px;  /* この記述抜けでログイン表示と少しずれがあった */
   color: #333333;
+  font-weight: bold;
+}
+
+ /* スマホ表示時 */
+ @media (max-width: 599px) {
+  .heartapp-icon-6 {
+    width: 25vw;
+  }
+
+  .nav {
+    font-size: 15px; /* 可能な一番大きいサイズ*/
+    width: 100%;
+    padding: 1vh 0;
+  }
+
+  .category-list {
+    margin-right: 4vw; /* カテゴリーのーと・カレンダーの点が重なるためサイズアップ*/
+  }
 }
