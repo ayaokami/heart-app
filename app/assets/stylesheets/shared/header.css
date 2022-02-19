@@ -4,14 +4,9 @@
   display: flex;
   flex-direction: column;
 }
-.second-page-header{
-  height: 0vh;
-  width: 100vw;
-  padding: 0 15vw;
-}
 
-.heartapp-icon {
-  width: 10vw;
+.heartapp-icon-6 {
+  width: 20vw;
   margin-right: 10vw;
 }
 
