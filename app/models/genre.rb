@@ -1,6 +1,6 @@
 class Genre < ActiveHash::Base
   self.data = [
-    #{ id: 1, name: '--' }, 初期値へ置き換える
+    # { id: 1, name: '--' }, 初期値へ置き換える
     { id: 2, name: '心不全とは' },
     { id: 3, name: '症状の観察方法' },
     { id: 4, name: '受診の目安' },
