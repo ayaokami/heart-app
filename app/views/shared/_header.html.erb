@@ -8,9 +8,9 @@
       <li>
         <div class="search-field">
           <%= search_form_for Column.ransack(params[:q]), url: search_columns_path do |f| %>
-          <%= f.label :genre_id, 'コラムのカテゴリー', class: "category-list"  %>
+          <%= f.label :genre_id_eq, 'コラムのカテゴリー', class: "category-list"  %>
           <br>
-          <%= f.collection_select(:genre_id,  Genre.all, :id, :name, {include_blank: "---"},{class:"genre-select-top"}) %>
+          <%= f.collection_select(:genre_id_eq,  Genre.all, :id, :name, {include_blank: "---"},{class:"genre-select-top"}) %>
         </div>
         <%= f.submit '検索' %>
         <% end %>

@@ -1,0 +1,33 @@
+<%= render "shared/header" %>
+
+<h2>＜コラムの検索一覧＞</h2>
+    <% @columns.each do |f| %>
+    <div class="columns">
+      <div class="column-title">
+        <%= f.title %>
+      </div>
+      <div class="column-text">
+        <%= f.text %>
+      </div>
+      <div class="column-genre">
+        <%= f.genre.name %>
+      </div>
+      <div class="column-date">
+        <%= f.created_at %>
+      </div>
+      <ul class = column-admin>
+        <%# adminの時だけ編集・削除機能を表示する %>
+        <% if user_signed_in? && current_user.admin? %>
+          <li><%= link_to '編集', edit_admin_column_path(f.id), method: :get, class: "column-edit" %></li>
+          <li><%= link_to '削除', admin_column_path(f.id), method: :delete, class: "column-delete" %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+<%= link_to("#_path", class: 'record-btn') do %>
+  <span class='record-btn-text'>記録する</span>
+  <%= image_tag 'My project.png' , size: '185x50' ,class: "record-btn-icon" %>
+<% end %>
+
+<%= render "shared/footer" %>
