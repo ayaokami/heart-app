@@ -7,6 +7,11 @@
   font-size: 20px;
 }
 
+/* バリデーションエラー時にビューが崩れないようにする */
+.field_with_errors {
+  display: contents;  /* none指定は要素も子要素も非表示になってしまう、新たに追加された要素だけを非表示にするのはcontents */
+}
+
 /* スマホ表示時 */
 @media (max-width: 599px) {
   .error-alert{
