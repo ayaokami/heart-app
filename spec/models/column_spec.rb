@@ -16,17 +16,17 @@ RSpec.describe Column, type: :model do
       it 'titleが空では保存できない' do
         @column.title = ''
         @column.valid?
-        expect(@column.errors.full_messages).to include("タイトルを入力してください")
+        expect(@column.errors.full_messages).to include('タイトルを入力してください')
       end
       it 'textが空では保存できない' do
         @column.text = ''
         @column.valid?
-        expect(@column.errors.full_messages).to include("テキストを入力してください")
+        expect(@column.errors.full_messages).to include('テキストを入力してください')
       end
       it 'genre_idが空では保存できない' do
         @column.genre_id = nil
         @column.valid?
-        expect(@column.errors.full_messages).to include("カテゴリーを入力してください")
+        expect(@column.errors.full_messages).to include('カテゴリーを入力してください')
       end
       # it 'genre_idが1では保存できない' do
       #  @column.genre_id = 1
