@@ -6,6 +6,6 @@ class ColumnsController < ApplicationController
 
   def search
     @q = Column.ransack(params[:q])
-    @columns = @q.result
+    @columns = @q.result.order('created_at DESC')
   end
 end
