@@ -1,4 +1,5 @@
 ja:
   time:
     formats:
-      default: "%Y/%m/%d %H:%M:%S"
+      default: "%Y/%m/%d %H:%M:%S"  # lメソッドをつけると表示できる
+      short: "%Y/%m/%d %H:%M"  # 短く表示したいときの設定 対象箇所にformat: :shortをつける。例 <%= l user.created_at, format: :short %>
