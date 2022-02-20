@@ -90,6 +90,11 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include('目標体重は5文字以内で入力してください')
       end
+      it 'target_weightは数値でないと登録できない' do
+        @user.target_weight = "あ１０ア亜"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("目標体重は数値で入力してください")
+      end
       it 'ageが空では登録できない' do
         @user.age = nil
         @user.valid?
@@ -100,10 +105,20 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include('年齢は3文字以内で入力してください')
       end
+      it 'ageは整数でないと登録できない' do
+        @user.age = 1.1
+        @user.valid?
+        expect(@user.errors.full_messages).to include("年齢は整数で入力してください")
+      end
       it 'water_restrictionが4文字以上では登録できない' do
-        @user.water_restriction = 10_000
+        @user.water_restriction = 10000
         @user.valid?
         expect(@user.errors.full_messages).to include('1日の水分制限量は4文字以内で入力してください')
+      end
+      it 'water_restrictionは整数でないと登録できない' do
+        @user.water_restriction = 10.0
+        @user.valid?
+        expect(@user.errors.full_messages).to include('1日の水分制限量は整数で入力してください')
       end
     end
   end
