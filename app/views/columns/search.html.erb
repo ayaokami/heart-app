@@ -13,7 +13,7 @@
         <%= f.genre.name %>
       </div>
       <div class="column-date">
-        <%= f.created_at %>
+        <%= l f.created_at, format: :short %>
       </div>
       <ul class = column-admin>
         <%# adminの時だけ編集・削除機能を表示する %>
