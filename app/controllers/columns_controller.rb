@@ -3,4 +3,9 @@ class ColumnsController < ApplicationController
   def index
     @columns = Column.includes(:user).order('created_at DESC')
   end
+
+  def search
+    @q = Column.ransack(params[:q])
+    @columns = @q.result.order('created_at DESC')
+  end
 end

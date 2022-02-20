@@ -29,6 +29,12 @@
   color: #333333;
 }
 
+.genre-select-top{
+  min-width: 100px;
+  width: 15vw;
+  max-width: 150px;
+}
+
 .calendar-list {
   text-decoration: none;
   color: #333333;

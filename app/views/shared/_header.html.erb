@@ -5,7 +5,16 @@
   </div>
   <div class='nav'>
     <ul class='lists-left'>
-      <li><%= link_to 'コラムのカテゴリー', "#", class: "category-list" %></li>
+      <li>
+        <div class="search-field">
+          <%= search_form_for Column.ransack(params[:q]), url: search_columns_path do |f| %>
+          <%= f.label :genre_id_eq, 'コラムのカテゴリー', class: "category-list"  %>
+          <br>
+          <%= f.collection_select(:genre_id_eq,  Genre.all, :id, :name, {include_blank: "---"},{class:"genre-select-top"}) %>
+        </div>
+        <%= f.submit '検索' %>
+        <% end %>
+      </li>
       <li><%= link_to 'カレンダー', "#", class: "calendar-list" %></li>
     </ul>
     <ul class='lists-right'>
