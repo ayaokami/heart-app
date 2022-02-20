@@ -10,7 +10,7 @@ module HeartApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
-    # デフォルトのロケールを日本（ja）に設定
+    # デフォルトのロケールを日本（ja）に設定（時間や言語）
     config.i18n.default_locale = :ja
     # タイムゾーンを日本時間に設定
     config.time_zone = 'Tokyo'

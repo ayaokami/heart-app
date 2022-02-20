@@ -3,3 +3,17 @@ ja:
     formats:
       default: "%Y/%m/%d %H:%M:%S"  # lメソッドをつけると表示できる
       short: "%Y/%m/%d %H:%M"  # 短く表示したいときの設定 対象箇所にformat: :shortをつける。例 <%= l user.created_at, format: :short %>
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        last_name_kana: 苗字（カナ）
+        first_name_kana: 名前（カナ）
+        target_weight: 目標体重
+        age: 年齢
+        water_restriction: 1日の水分制限量
+        name: お名前（全角カナ）
+      column:
+        title: タイトル
+        text: テキスト
+        genre_id: カテゴリー

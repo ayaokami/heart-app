@@ -59,3 +59,5 @@ gem 'rspec-rails', '~> 4.0.0'
 gem 'factory_bot_rails'
 # 検索機能を実装するgem
 gem 'ransack'
+# 日本語に対応するgem
+gem 'rails-i18n'

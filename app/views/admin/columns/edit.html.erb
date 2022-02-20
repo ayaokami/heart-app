@@ -1,5 +1,6 @@
 <%= render "shared/second_header" %>
 <%= form_with url: admin_column_path, model: @column, local: true do |f| %>
+  <%= render 'shared/error_messages', model: f.object %>
   <div class="column-box">
     コラム編集ページ
     <%= f.text_field :title, class: "title", placeholder: "タイトル"  %>

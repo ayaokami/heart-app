@@ -1,0 +1,21 @@
+.error-alert{
+  background-color: peachpuff;
+  display: flex;
+  justify-content: flex-end; /* 中央配置では画像縮小時にロゴと重なってしまうため右側表示へ */
+  align-items: center;
+  padding: 50px 50px;
+  font-size: 20px;
+}
+
+/* バリデーションエラー時にビューが崩れないようにする */
+.field_with_errors {
+  display: contents;  /* none指定は要素も子要素も非表示になってしまう、新たに追加された要素だけを非表示にするのはcontents */
+}
+
+/* スマホ表示時 */
+@media (max-width: 599px) {
+  .error-alert{
+    padding-top: 80px;
+    font-size: 15px;
+  }
+}
