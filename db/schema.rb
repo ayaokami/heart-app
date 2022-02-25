@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_14_094227) do
+ActiveRecord::Schema.define(version: 2022_02_25_150247) do
 
   create_table "columns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
@@ -20,6 +20,23 @@ ActiveRecord::Schema.define(version: 2022_02_14_094227) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_columns_on_user_id"
+  end
+
+  create_table "records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.float "kt", null: false
+    t.integer "pulse", null: false
+    t.integer "systolic", null: false
+    t.integer "diastolic", null: false
+    t.float "bw", null: false
+    t.boolean "palpitation", default: false, null: false
+    t.boolean "suffocation", default: false, null: false
+    t.boolean "swelling", default: false, null: false
+    t.boolean "fatigue", default: false, null: false
+    t.bigint "user_id", null: false
+    t.datetime "start_time", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_records_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -42,4 +59,5 @@ ActiveRecord::Schema.define(version: 2022_02_14_094227) do
   end
 
   add_foreign_key "columns", "users"
+  add_foreign_key "records", "users"
 end
