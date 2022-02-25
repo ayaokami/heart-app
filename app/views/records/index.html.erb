@@ -1,1 +1,21 @@
-<h1>records#index</h1>
+<%= render "shared/second_header" %>
+<h2> 記録カレンダー</h2>
+
+<br>
+
+<%= link_to '記録する', '#' %>
+
+<%= month_calendar events: @records do |date, records| %>
+  <%= date.day %>
+
+  <% records.each do |record| %>
+    <div>
+      <%= link_to record.bw, record %>  <%# 今は体重を表示させる、今後外来予約入力ができるようになれば入力表示内容を検討する%>
+    </div>
+  <% end %>
+<% end %>
+
+<%= link_to("#_path", class: 'record-btn') do %>
+  <span class='record-btn-text'>記録する</span>
+  <%= image_tag 'My project.png' , size: '185x50' ,class: "record-btn-icon" %>
+<% end %>
