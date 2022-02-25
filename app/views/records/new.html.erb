@@ -1,0 +1,71 @@
+<h2> 記録入力画面</h2>
+<%= link_to image_tag("My project-6.png", class:"heartapp-icon-6-2"), "/" %>
+
+<%= form_with(model: @record, url: records_path, local: true) do |form| %>
+
+  <div class="time">
+    <%= form.label :start_time %>
+    <%= form.datetime_select :start_time %>
+  </div>
+
+  <div class="kt">
+    <%= form.label :kt %>
+    <%= form.text_field :kt, maxlength: 4 %>
+  </div>
+
+  <div class="pulse">
+    <%= form.label :pulse %>
+    <%= form.text_field :pulse, maxlength: 3 %>
+  </div>
+
+  <%# 血圧は同じラベル内に収縮期と拡張期のフォームを入力 ラベルは1つ、同じラベル内に記述すると横並びになる。%>
+  <div class="bp">
+    <%= form.label :bp %>
+    <%= form.text_field :systolic, maxlength: 3 %>
+    <%= "/" %>
+    <%= form.text_field :diastolic, maxlength: 3 %>
+  </div>
+
+  <div class="bw">
+    <%= form.label :bw %>
+    <%= form.text_field :bw, maxlength: 5 %>
+  </div>
+
+  <%# ラジオボタンを作成 %>
+  <div class="palpitation">
+    <%= "動悸" %>
+    <%= form.label :palpitation, 'あり', value: 1 %>
+    <%= form.radio_button :palpitation, '1' %>
+    <%= form.label :palpitation, 'なし', value: 0 %>
+    <%= form.radio_button :palpitation, '0' %>
+  </div>
+
+  <div class="suffocation">
+    <%= "息苦しさ" %>
+    <%= form.label :suffocation, 'あり', value: 1 %>
+    <%= form.radio_button :suffocation, '1' %>
+    <%= form.label :suffocation, 'なし', value: 0 %>
+    <%= form.radio_button :suffocation, '0' %>
+  </div>
+
+  <div class="swelling">
+     <%= "浮腫" %>
+    <%= form.label :swelling, 'あり', value: 1 %>
+    <%= form.radio_button :swelling, '1' %>
+    <%= form.label :swelling, 'なし', value: 0 %>
+    <%= form.radio_button :swelling, '0' %>
+  </div>
+
+  <div class="fatigue">
+    <%= "倦怠感" %>
+    <%= form.label :fatigue, 'あり', value: 1 %>
+    <%= form.radio_button :fatigue, '1' %>
+    <%= form.label :fatigue, 'なし', value: 0 %>
+    <%= form.radio_button :fatigue, '0' %>
+  </div>
+
+  <div class="submit">
+    <%= form.submit %>
+  </div>
+
+<% end %>
