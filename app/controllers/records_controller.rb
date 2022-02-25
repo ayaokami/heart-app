@@ -1,4 +1,7 @@
 class RecordsController < ApplicationController
+  # ログインしていないuserがURL入力で操作しようとした場合、ログイン画面に遷移する
+  before_action :authenticate_user!
+
   def index
     @records = Record.all
   end
