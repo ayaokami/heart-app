@@ -1,0 +1,79 @@
+<h2> 記録の詳細</h2>
+<%= link_to image_tag("My project-6.png", class:"heartapp-icon-6-2"), "/" %>
+<%# 時間は表記しなくてよいので↓日付のみ 時間が必要なら  %H:%M を追記 ("%Y-%m-%d %H:%M")へ%>
+<p>
+  <strong>記録日</strong> 
+  <%= @record.start_time.strftime("%Y-%m-%d") %>
+</p>
+
+<p>
+  <strong>体温</strong>
+  <%= @record.kt %>
+  <%= "℃" %>
+</p>
+
+<p>
+  <strong>脈拍</strong>
+  <%= @record.pulse %>
+  <%= "回/分" %>
+</p>
+
+<p>
+  <strong>血圧</strong>
+  <%= @record.systolic %><%="/"%><%= @record.diastolic %>
+  <%= "mmHg" %>
+</p>
+
+<p>
+  <strong>体重</strong>
+  <%= @record.bw %>
+  <%= "kg" %>
+</p>
+
+<%# 動悸以降はfalse表示になってしまうため各if文で表示切り替え %>
+<p>
+  <strong>動悸</strong>
+  <% if @record.palpitation == true %>
+    <%= "あり" %>
+    <br>
+    <%= " まずは安静にしましょう。自己検脈をしリズム不整がある、気分がよくならないことが続けば受診をしましょう" %>
+  <% else %>
+    <%= "なし" %>
+  <% end %>
+</p>
+
+<p>
+  <strong>息苦しさ</strong>
+  <% if @record.suffocation == true %>
+    <%= "あり" %>
+    <br>
+    <%= " どの程度の息切れがしますか？ 休んでもよくならない、横になって寝れない（座りながら寝る）ときには受診しましょう" %>
+  <% else %>
+    <%= "なし" %>
+  <% end %>
+</p>
+
+<p>
+  <strong>浮腫</strong>
+  <% if @record.swelling == true %>
+    <%= "あり" %>
+    <br>
+    <%= " 体重は増加していませんか？ 目標体重＋2kg以上あるときには、外来予約を待たずに受診しましょう" %>
+  <% else %>
+    <%= "なし" %>
+  <% end %>
+</p>
+
+<p>
+  <strong>倦怠感</strong>
+  <% if @record.fatigue == true %>
+    <%= "あり" %>
+    <br>
+    <%= " だるさ、疲れやすさに加えて、食欲不振はありませんか？ 心不全増悪のリスクがあります。続くようなら受診しましょう" %>
+  <% else %>
+    <%= "なし" %>
+  <% end %>
+</p>
+
+<%= link_to '編集', "#" %> 
+<%= link_to '削除', "#" %> 
