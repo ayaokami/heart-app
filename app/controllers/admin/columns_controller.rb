@@ -3,6 +3,7 @@ class Admin::ColumnsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :destroy, :edit, :update]
   # ログインしていても、管理者以外はトップページに遷移する
   before_action :if_not_admin
+  before_action :set_column, only: [:edit, :update]
 
   # 以下に管理者が行うアクションを記載
   def new
@@ -20,11 +21,9 @@ class Admin::ColumnsController < ApplicationController
   end
 
   def edit
-    @column = Column.find(params[:id])
   end
 
   def update
-    @column = Column.find(params[:id])
     if @column.update(column_params)
       redirect_to root_path
     else
@@ -46,5 +45,9 @@ class Admin::ColumnsController < ApplicationController
 
   def column_params
     params.require(:column).permit(:title, :text, :genre_id).merge(user_id: current_user.id)
+  end
+
+  def set_column
+    @column = Column.find(params[:id])
   end
 end

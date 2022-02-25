@@ -1,6 +1,7 @@
 class RecordsController < ApplicationController
   # ログインしていないuserがURL入力で操作しようとした場合、ログイン画面に遷移する
   before_action :authenticate_user!
+  before_action :set_record, only: [:show, :edit, :update, :destroy]
 
   def index
     @records = Record.all
@@ -21,15 +22,12 @@ class RecordsController < ApplicationController
   end
 
   def show
-    @record = Record.find(params[:id])
   end
 
   def edit
-    @record = Record.find(params[:id])
   end
 
   def update
-    @record = Record.find(params[:id])
     if @record.update(record_params)
       redirect_to root_path
     else
@@ -38,7 +36,6 @@ class RecordsController < ApplicationController
   end
 
   def destroy
-    @record = Record.find(params[:id])
     @record.destroy
     redirect_to root_path
   end
@@ -46,5 +43,9 @@ class RecordsController < ApplicationController
   private
   def record_params
     params.require(:record).permit(:kt, :pulse, :systolic, :diastolic, :bw, :palpitation, :suffocation, :swelling, :fatigue, :start_time).merge(user_id: current_user.id)
+  end
+
+  def set_record
+    @record = Record.find(params[:id])
   end
 end
