@@ -61,3 +61,4 @@ gem 'factory_bot_rails'
 gem 'ransack'
 # 日本語に対応するgem
 gem 'rails-i18n'
+gem 'simple_calendar', '~> 2.0'

@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :columns, only: [:new, :create, :edit, :update, :destroy]
   end
+
+  resources :records
 end

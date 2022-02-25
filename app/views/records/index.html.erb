@@ -1,0 +1,24 @@
+<h2> 記録カレンダー</h2>
+<%= link_to image_tag("My project-6.png", class:"heartapp-icon-6-2"), "/" %>
+
+<br>
+  <% if user_signed_in? %>
+    <%= link_to current_user.nickname, "#", class: "user-nickname" %><%= "さんの、" %>
+    <%= "目標体重は "%>
+    <%= current_user.target_weight %><%= "kg" %>
+  <% end %>
+
+<%= month_calendar events: @records do |date, records| %>
+  <%= date.day %>
+
+  <% records.each do |record| %>
+    <div>
+      <%= link_to record.bw, record %>  <%# 今は体重を表示させる、今後外来予約入力ができるようになれば入力表示内容を検討する%>
+    </div>
+  <% end %>
+<% end %>
+
+<%= link_to( new_record_path, class: 'record-btn') do %>
+  <span class='record-btn-text'>記録する</span>
+  <%= image_tag 'My project.png' , size: '185x50' ,class: "record-btn-icon" %>
+<% end %>
