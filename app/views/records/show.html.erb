@@ -76,5 +76,6 @@
 </p>
 
 <%= link_to '編集', edit_record_path(@record) %> 
-<%= link_to '削除', "#" %> 
+<%#= data: { confirm: 'Are you sure?' }はブラウザのアラート機能を利用 他にいい方法はないか？%>
+<%= link_to '削除', record_path(@record), method: :delete, data: { confirm: '削除しますか?' } %> 
 <%= link_to 'カレンダーへ戻る', records_path %> 
