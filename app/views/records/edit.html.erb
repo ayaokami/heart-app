@@ -1,7 +1,8 @@
-<h2> 記録を入力する</h2>
+<h2> 記録を編集する</h2>
 <%= link_to image_tag("My project-6.png", class:"heartapp-icon-6-2"), "/" %>
 
-<%= form_with(model: @record, url: records_path, local: true) do |form| %>
+<%#= new.html.erbと同じ記述 フォームの受け渡し先（urlが異なる）%>
+<%= form_with(model: @record, url: record_path, local: true) do |form| %>
 
   <div class="time">
     <%= form.label :start_time %>
