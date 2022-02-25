@@ -41,8 +41,10 @@ class RecordsController < ApplicationController
   end
 
   private
+
   def record_params
-    params.require(:record).permit(:kt, :pulse, :systolic, :diastolic, :bw, :palpitation, :suffocation, :swelling, :fatigue, :start_time).merge(user_id: current_user.id)
+    params.require(:record).permit(:kt, :pulse, :systolic, :diastolic, :bw, :palpitation, :suffocation, :swelling, :fatigue,
+                                   :start_time).merge(user_id: current_user.id)
   end
 
   def set_record
